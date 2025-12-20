@@ -1,8 +1,4 @@
 # Dockerfile for web - The shared site
-FROM ubuntu:22.04
+FROM httpd:2.4-alpine
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y python3
-RUN useradd -m challengeuser
-
-USER challengeuser
-
+COPY ./html/ /usr/local/apache2/htdocs/

@@ -3,4 +3,4 @@
 **Difficulty:** Beginner  
 **Author:** The Mikkel  
 
-*Add challenge description here*
+The site may contain the precious object you are looking for.

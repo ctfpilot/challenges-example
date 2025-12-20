@@ -6,7 +6,10 @@ slug: the-shared-site
 author: The Mikkel
 category: web
 difficulty: beginner
-tags: []
+tags: [
+  Shared,
+  Example
+]
 type: shared
 instanced_type: web
 instanced_name: null

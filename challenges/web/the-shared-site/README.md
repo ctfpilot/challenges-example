@@ -1,4 +1,3 @@
 # The shared site
 
-*Add information about challenge here*  
-*It is meant to contain internal documentation of the challenge, such as how it is solved*
+This challenge is an example challenge, that is meant to demonstrate how shared challenges work.

@@ -1,3 +1,3 @@
 # Solution
-This directory is used to store the solution script for the challenge.
-This file should contain the steps to solve the challenge.
+
+The flag is visible on the main page of the website handed out as part of this challenge.
