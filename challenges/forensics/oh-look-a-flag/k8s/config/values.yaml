@@ -3,7 +3,7 @@ challenge:
   name: oh-look-a-flag
   category: forensics
   type: none
-  version: 4
+  version: 5
   path: challenges/forensics/oh-look-a-flag
 kubectf:
   expires: 3600
