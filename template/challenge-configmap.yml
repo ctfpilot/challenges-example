@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "challenge-{{ CHALLENGE_CATEGORY }}-{{ CHALLENGE_NAME }}"
+  labels:
+    challenges.ctfpilot.com/type: "{{ CHALLENGE_TYPE }}"
+    challenges.ctfpilot.com/name: "{{ CHALLENGE_NAME }}"
+    challenges.ctfpilot.com/category: "{{ CHALLENGE_CATEGORY }}"
+    challenges.ctfpilot.com/version: "{{ CHALLENGE_VERSION }}"
+    challenges.ctfpilot.com/configmap: "challenge-config"
+    challenges.ctfpilot.com/enabled: "{{ CHALLENGE_ENABLED }}"
+    ctfpilot.com/component: "challenge-config"
+data:
+  name: "{{ CHALLENGE_NAME }}"
+  path: "{{ CHALLENGE_PATH }}"
+  repository: "{{ CHALLENGE_REPO }}"
+  generated_at: "{{ CURRENT_DATE }}"
+  challenge: |
+    %%CONFIG%%
+  description: |
+    %%DESCRIPTION%%

@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "challenge-test-example"
+  labels:
+    challenges.ctfpilot.com/type: "none"
+    challenges.ctfpilot.com/name: "example"
+    challenges.ctfpilot.com/category: "test"
+    challenges.ctfpilot.com/version: "4"
+    challenges.ctfpilot.com/configmap: "challenge-config"
+    challenges.ctfpilot.com/enabled: "true"
+    ctfpilot.com/component: "challenge-config"
+data:
+  name: "example"
+  path: "challenges/test/example"
+  repository: "ctfpilot/challenges-template"
+  generated_at: "2025-12-05 23:22:56"
+  challenge: |
+    {
+      "$schema": "https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json",
+      "enabled": true,
+      "name": "Example",
+      "slug": "example",
+      "author": "The Mikkel",
+      "category": "test",
+      "difficulty": "easy",
+      "tags": [],
+      "type": "static",
+      "instanced_type": "none",
+      "instanced_name": null,
+      "instanced_subdomains": [],
+      "connection": null,
+      "flag": [
+        {
+          "flag": "test{demo}",
+          "case_sensitive": false
+        }
+      ],
+      "points": 1000,
+      "decay": 75,
+      "min_points": 10,
+      "description_location": "description.md",
+      "handout_dir": "handout"
+    }
+
+  description: |
+    # Example
+    
+    **Difficulty:** Easy  
+    **Author:** The Mikkel  
+    
+    *Add challenge description here*
+

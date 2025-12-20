@@ -1,0 +1,11 @@
+challenge:
+  enabled: true
+  name: example
+  category: test
+  type: none
+  version: 4
+  path: challenges/test/example
+kubectf:
+  expires: 3600
+  availableAt: 0
+  host: example.com

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: configmap-example
+version: 1.4.0
+description: Challenge configmap for example in category test
+appVersion: "1.4.0"
+type: application

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "page-{{ PAGE_SLUG }}"
+  labels:
+    page.ctfpilot.com/slug: "{{ PAGE_NAME }}"
+    page.ctfpilot.com/version: "{{ PAGE_VERSION }}"
+    page.ctfpilot.com/enabled: "{{ PAGE_ENABLED }}"
+    page.ctfpilot.com/configmap: "page-config"
+    challenges.ctfpilot.com/configmap: "page-config"
+    ctfpilot.com/component: "page-config"
+data:
+  slug: "{{ PAGE_SLUG }}"
+  name: "{{ PAGE_NAME }}"
+  path: "{{ PAGE_PATH }}"
+  repository: "{{ PAGE_REPO }}"
+  generated_at: "{{ CURRENT_DATE }}"
+  page: |
+    %%PAGE%%
+  content: |
+    %%CONTENT%%

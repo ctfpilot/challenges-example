@@ -1,0 +1,115 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "ctf-{{ deployment_id }}"
+  namespace: kubectf-challenges-instanced
+  labels:
+    challenges.ctfpilot.com/type: "{{ CHALLENGE_TYPE }}"
+    challenges.ctfpilot.com/name: "{{ CHALLENGE_NAME }}"
+    challenges.ctfpilot.com/category: "{{ CHALLENGE_CATEGORY }}"
+    instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+    instanced.challenges.ctfpilot.com/owner: "{{ owner_id }}"
+    ctfpilot.com/component: "instanced-challenge"
+  annotations:
+    janitor/expires: "{{ expires }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+      instanced.challenges.ctfpilot.com/owner: "{{ owner_id }}"
+  template:
+    metadata:
+      labels:
+        role: "{{ CHALLENGE_TYPE }}"
+        challenges.ctfpilot.com/type: "{{ CHALLENGE_TYPE }}"
+        challenges.ctfpilot.com/name: "{{ CHALLENGE_NAME }}"
+        challenges.ctfpilot.com/category: "{{ CHALLENGE_CATEGORY }}"
+        instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+        instanced.challenges.ctfpilot.com/owner: "{{ owner_id }}"
+        ctfpilot.com/component: "instanced-challenge"
+    spec:
+      enableServiceLinks: false
+      automountServiceAccountToken: false
+      imagePullSecrets:
+        - name: dockerconfigjson-github-com
+      dnsPolicy: None
+      dnsConfig:
+        nameservers:
+          - 1.1.1.1
+          - 8.8.8.8
+      tolerations:
+        - key: "cluster.ctfpilot.com/node"
+          value: "scaler"
+          effect: "PreferNoSchedule"
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: "cluster.ctfpilot.com/node"
+                    operator: In
+                    values:
+                      - scaler
+      containers:
+        - name: web
+          image: ghcr.io/{{ CHALLENGE_REPO }}-{{ DOCKER_IMAGE }}:{{ CHALLENGE_VERSION }}
+          imagePullPolicy: IfNotPresent
+          resources:
+            limits:
+              cpu: 200m
+              memory: 256Mi
+            requests:
+              cpu: 10m
+              memory: 32Mi
+          ports:
+            - containerPort: 8080
+              name: tcp
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: "ctf-{{ deployment_id }}"
+  namespace: kubectf-challenges-instanced
+  labels:
+    challenges.ctfpilot.com/type: "{{ CHALLENGE_TYPE }}"
+    challenges.ctfpilot.com/name: "{{ CHALLENGE_NAME }}"
+    challenges.ctfpilot.com/category: "{{ CHALLENGE_CATEGORY }}"
+    instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+    instanced.challenges.ctfpilot.com/owner: "{{ owner_id }}"
+    ctfpilot.com/component: "instanced-challenge"
+  annotations:
+    janitor/expires: "{{ expires }}"
+spec:
+  selector:
+    role: "{{ CHALLENGE_TYPE }}"
+    instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+  ports:
+    - port: 8080
+      name: tcp
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRouteTCP
+metadata:
+  name: "ingress-ctf-{{ deployment_id }}"
+  namespace: kubectf-challenges-instanced
+  labels:
+    challenges.ctfpilot.com/type: "{{ CHALLENGE_TYPE }}"
+    challenges.ctfpilot.com/name: "{{ CHALLENGE_NAME }}"
+    challenges.ctfpilot.com/category: "{{ CHALLENGE_CATEGORY }}"
+    instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+    instanced.challenges.ctfpilot.com/owner: "{{ owner_id }}"
+    ctfpilot.com/component: "instanced-challenge"
+  annotations:
+    janitor/expires: "{{ expires }}"
+    traefik.ingress.kubernetes.io/router.priority: "100"
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: HostSNI(`{{ deployment_id }}.{{ domain }}`)
+      services:
+        - name: "ctf-{{ deployment_id }}"
+          port: 8080
+  tls:
+    secretName: kubectf-cert-challs
