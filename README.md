@@ -1,4 +1,4 @@
-# Challenge Repository Template
+# Challenges example repository
 
 This repository contains an example challenges repository, for CTF Pilot's Challenge Repository Template
 
