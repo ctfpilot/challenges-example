@@ -3,4 +3,4 @@
 **Difficulty:** Beginner  
 **Author:** The Mikkel  
 
-*Add challenge description here*
+Handouts may contain flags, but does this one?

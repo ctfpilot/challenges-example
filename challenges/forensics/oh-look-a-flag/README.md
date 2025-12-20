@@ -1,4 +1,6 @@
 # Oh look, A flag!
 
-*Add information about challenge here*  
-*It is meant to contain internal documentation of the challenge, such as how it is solved*
+This challenge is an example challenge for testing the handout system.
+
+It contains a single text file, which contains a flag.  
+In the infrastructure, this file should be automatically zipped into a handout file, and uploaded to the platform.
