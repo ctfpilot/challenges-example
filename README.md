@@ -1,64 +1,15 @@
 # Challenge Repository Template
 
-## Template
+This repository contains an example challenges repository, for CTF Pilot's Challenge Repository Template
 
-> [!IMPORTANT]
-> The [`Template`](#template) section must be removed after you have created a repository from this template.  
-> This section serves only to inform you on how to use this template.
+## Challenge toolkit
 
-This repository serves as a template for creating new challenge repositories in the CTF Pilot ecosystem.  
-It includes the necessary structure, workflows, and tools to streamline challenge development and deployment.
+This repository contains [CTF Pilot's Challenge Toolkit](https://github.com/ctfpilot/challenge-toolkit) as a Git submodule.  
+In order to retrieve the submodule, run the following command after cloning the repository:
 
-### How to Use This Template
-
-1. **Create a New Repository**:
-   - Click the "Use this template" button on the repository page.
-   - Name your new repository and configure its visibility.
-
-2. **Allow pipeline to create pull requests**:
-   - Go to the "Settings" tab of your new repository.
-   - Select "Actions" > "General".
-   - Check the box for "Allow GitHub Actions to create and approve pull requests".
-
-3. **Clone the New Repository**:
-   - Clone your newly created repository to your local machine using Git.
- 
-4. **Remove the Template Section**:
-   - Open the `README.md` file in your new repository.
-   - Remove the entire `Template` section to avoid confusion.
-
-5. **Insert repository name (`owner/repo`) in the README.md file**:
-   - In the `README.md` file, replace all instances of `ctfpilot/challenges-template` with your new repository's name in the format `owner/repo`. (Use find and replace feature of your text editor).
-
-### Included Features
-
-Included in this template are the following tools and configurations:
-
-- [CTF Pilot's Challenge Toolkit](https://github.com/ctfpilot/challenge-toolkit) v1.0
-- [CTF Pilot's Challenge CI](https://github.com/ctfpilot/challenge-ci) v1.0
-
-The tools are configured to work out-of-the-box, enabling you to focus on challenge development rather than setup.  
-However, for advanced customization, refer to the documentation of each tool.
-
-#### Discord bot integration
-
-[CTF Pilot's Discord Bot](https://github.com/ctfpilot/discord-bot) can be integrated with this repository.  
-However, this README does not provide instructions to challenge developers on how it can be used to do some of the automation.
-
-Refer to the [Discord Bot documentation](https://github.com/ctfpilot/discord-bot) for more information on how to set up and use the bot with your challenge repository.
-
-### Template license
-
-The template repository is licensed under the [EUPL-1.2 License](https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/2020-03/EUPL-1.2%20EN.txt).  
-The included tools are licensed under their respective licenses.
-
-By contributing to this template repository, you agree to our Contributor License Agreement (CLA).  
-The CLA can be found in <https://github.com/ctfpilot/cla>.
-
-You may copy, modify, and distribute this template repository under the terms of the [EUPL-1.2 License](https://interoperable-europe.ec.europa.eu/sites/default/files/custom-page/attachment/2020-03/EUPL-1.2%20EN.txt).  
-Any content you add to your new repository, that is templated from this repository, is subject to your own licensing terms.
-
-A license file is not included in this template repository to avoid confusion.
+```bash
+git submodule update --init --recursive
+```
 
 ## Repository structure
 
@@ -182,13 +133,13 @@ If it is your first time developing a challenge, please read the entire section 
 The challenge development process is as follows:
 
 1. Create a new challenge based on the [Create challenge](#create-a-challenge) section.
-   - TL;DR: Use the [Create challenge Github action](https://github.com/ctfpilot/challenges-template/actions/workflows/create-chall.yml) to create a new challenge.
+   - TL;DR: Use the [Create challenge Github action](https://github.com/ctfpilot/challenges-example/actions/workflows/create-chall.yml) to create a new challenge.
 2. Update the generated issue with the challenge information.
    - The description of the issue with relevant information about the challenge.
 3. Checkout the branch created by the Github action locally
    - Clone the repository and switch branch to the new branch:
-   - `git clone https://github.com/ctfpilot/challenges-template`
-   - `cd ctfpilot/challenges-template`
+   - `git clone https://github.com/ctfpilot/challenges-example`
+   - `cd ctfpilot/challenges-example`
    - `git checkout challenge/<challenge-slug>`
 4. Develop the challenge.
    - Develop your challenge, by adding the files needed in the `src/` and `handout/` directory.
@@ -224,16 +175,16 @@ Large files should *never* be commited to the repository. If you need to add a l
 
 ### Create a challenge
 
-To create a new challenge, you can use the provided Github action workflow: [`Create challange`](https://github.com/ctfpilot/challenges-template/actions/workflows/create-chall.yml).
+To create a new challenge, you can use the provided Github action workflow: [`Create challange`](https://github.com/ctfpilot/challenges-example/actions/workflows/create-chall.yml).
 
-This workflow can be found in the [`Actions`](https://github.com/ctfpilot/challenges-template/actions/workflows/create-chall.yml) tab of the repository.
+This workflow can be found in the [`Actions`](https://github.com/ctfpilot/challenges-example/actions/workflows/create-chall.yml) tab of the repository.
 
 The workflow automatically creates a new challenge, with the necessary structure and files, including a branch, pull request and issue for tracking the challenge development.
 
 To create a new challenge, follow these steps:
 
-1. Go to the [`Actions`](https://github.com/ctfpilot/challenges-template/actions/workflows/create-chall.yml) tab of the repository.
-2. Select the [`Create challange`](https://github.com/ctfpilot/challenges-template/actions/workflows/create-chall.yml) workflow from the left sidebar.
+1. Go to the [`Actions`](https://github.com/ctfpilot/challenges-example/actions/workflows/create-chall.yml) tab of the repository.
+2. Select the [`Create challange`](https://github.com/ctfpilot/challenges-example/actions/workflows/create-chall.yml) workflow from the left sidebar.
 3. Click the `Run workflow` button.
 4. Fill out the required inputs:
    - `Existing issue` (optional): If you have already created an issue for the challenge, you can provide the issue number here. Otherwise, leave it blank to create a new issue.
