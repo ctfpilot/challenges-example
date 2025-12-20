@@ -3,6 +3,6 @@
 enabled: true
 slug: "index"
 title: "Index page"
-route: "/"
+route: "/index"
 content: "page.md"
 format: "markdown"
