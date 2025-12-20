@@ -6,15 +6,15 @@ metadata:
     challenges.ctfpilot.com/type: "none"
     challenges.ctfpilot.com/name: "example"
     challenges.ctfpilot.com/category: "test"
-    challenges.ctfpilot.com/version: "4"
+    challenges.ctfpilot.com/version: "5"
     challenges.ctfpilot.com/configmap: "challenge-config"
     challenges.ctfpilot.com/enabled: "true"
     ctfpilot.com/component: "challenge-config"
 data:
   name: "example"
   path: "challenges/test/example"
-  repository: "ctfpilot/challenges-template"
-  generated_at: "2025-12-05 23:22:56"
+  repository: "ctfpilot/challenges-example"
+  generated_at: "2025-12-20 10:41:26"
   challenge: |
     {
       "$schema": "https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json",
