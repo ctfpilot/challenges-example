@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "challenge-web-where-robots-cannot-search"
+  labels:
+    challenges.ctfpilot.com/type: "web"
+    challenges.ctfpilot.com/name: "where-robots-cannot-search"
+    challenges.ctfpilot.com/category: "web"
+    challenges.ctfpilot.com/version: "4"
+    challenges.ctfpilot.com/configmap: "challenge-config"
+    challenges.ctfpilot.com/enabled: "true"
+    ctfpilot.com/component: "challenge-config"
+data:
+  name: "where-robots-cannot-search"
+  path: "challenges/web/where-robots-cannot-search"
+  repository: "ctfpilot/challenges-example"
+  generated_at: "2025-12-20 12:56:04"
+  challenge: |
+    {
+      "$schema": "https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json",
+      "enabled": true,
+      "name": "Where robots cannot search",
+      "slug": "where-robots-cannot-search",
+      "author": "The Mikkel",
+      "category": "web",
+      "difficulty": "beginner",
+      "tags": [
+        "BrunnerCTF 2025"
+      ],
+      "type": "instanced",
+      "instanced_type": "web",
+      "instanced_name": null,
+      "instanced_subdomains": [],
+      "connection": null,
+      "flag": [
+        {
+          "flag": "ctfpilot{r0bot5_sh0u1d_nOt_637_h3re_b0t_You_g07_h3re}",
+          "case_sensitive": false
+        }
+      ],
+      "points": 1000,
+      "decay": 75,
+      "min_points": 100,
+      "description_location": "description.md",
+      "handout_dir": "handout",
+      "dockerfile_locations": [
+        {
+          "location": "src/Dockerfile",
+          "context": "src/",
+          "identifier": null
+        }
+      ]
+    }
+
+  description: |
+    # Where robots cannot search
+    
+    **Difficulty:** Beginner  
+    **Author:** The Mikkel  
+    
+    Ahh, the Brunnerne company.  
+    But they have a secret, hidden away from robot search.
+

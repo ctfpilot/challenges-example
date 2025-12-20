@@ -1,6 +1,12 @@
 # Challenges example repository
 
-This repository contains an example challenges repository, for CTF Pilot's Challenge Repository Template
+> [!IMPORTANT]
+> This is an example repository of the [CTF Pilot's Challenge Repository Template](https://github.com/ctfpilot/challenges-template).  
+> It is intended to be used as a reference for creating your own challenges repository, and testing the infrastructure with some example challenges.
+>
+> **Please use the [Challenge Repository Template](https://github.com/ctfpilot/challenges-template) if you want to create your own challenges repository.**
+
+This repository contains an example challenges repository, for [CTF Pilot's Challenge Repository Template](https://github.com/ctfpilot/challenges-template).
 
 ## Challenge toolkit
 
@@ -205,3 +211,8 @@ To create a new challenge, follow these steps:
 7. Once the workflow is complete, a new branch, pull request, and issue will be created for the challenge.
 
 If errors occur during the workflow execution, please reach out to the infrastructure team for assistance. Logs from the workflow can be found in the `Actions` tab of the repository.
+
+## Project board
+
+A project board is available to track the progress of challenges.  
+This can be found at: [Challenges Project board](https://github.com/orgs/ctfpilot/projects/2)

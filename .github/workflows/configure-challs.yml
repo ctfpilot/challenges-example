@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  create_challenge:
-    name: Create challenge
-    uses: ctfpilot/challenge-ci/.github/workflows/configure-challs.yml@v1.0.0
+  configure_challenges:
+    name: Configure challenges
+    uses: ctfpilot/challenge-ci/.github/workflows/configure-challs.yml@v1.0.2
     permissions:
       contents: write
       packages: write
