@@ -6,7 +6,10 @@ slug: oh-look-a-flag
 author: The Mikkel
 category: forensics
 difficulty: beginner
-tags: []
+tags: [
+  Static,
+  Example
+]
 type: static
 instanced_type: none
 instanced_name: null

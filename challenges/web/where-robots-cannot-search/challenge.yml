@@ -8,6 +8,8 @@ category: web
 difficulty: beginner
 tags: [
   "BrunnerCTF 2025",
+  Instanced,
+  Example
 ]
 type: instanced
 instanced_type: web
