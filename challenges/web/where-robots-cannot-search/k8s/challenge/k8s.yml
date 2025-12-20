@@ -67,7 +67,7 @@ spec:
                           - scaler
           containers:
             - name: web
-              image: ghcr.io/ctfpilot/challenges-example-web-where-robots-cannot-search:10
+              image: ghcr.io/ctfpilot/challenges-example-web-where-robots-cannot-search:11
               imagePullPolicy: IfNotPresent
               resources:
                 limits:

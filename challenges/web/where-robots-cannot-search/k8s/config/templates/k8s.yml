@@ -6,7 +6,7 @@ metadata:
     challenges.ctfpilot.com/type: "web"
     challenges.ctfpilot.com/name: "where-robots-cannot-search"
     challenges.ctfpilot.com/category: "web"
-    challenges.ctfpilot.com/version: "10"
+    challenges.ctfpilot.com/version: "11"
     challenges.ctfpilot.com/configmap: "challenge-config"
     challenges.ctfpilot.com/enabled: "true"
     ctfpilot.com/component: "challenge-config"
@@ -14,7 +14,7 @@ data:
   name: "where-robots-cannot-search"
   path: "challenges/web/where-robots-cannot-search"
   repository: "ctfpilot/challenges-example"
-  generated_at: "2025-12-20 18:35:37"
+  generated_at: "2025-12-20 18:37:10"
   challenge: |
     {
       "$schema": "https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json",
