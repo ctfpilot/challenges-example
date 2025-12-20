@@ -6,7 +6,7 @@ on:
 jobs:
   render_templates:
     name: Render all templates
-    uses: ctfpilot/challenge-ci/.github/workflows/render-templates.yml@v1.0.0
+    uses: ctfpilot/challenge-ci/.github/workflows/render-templates.yml@v1.0.2
     permissions:
       contents: write
       packages: write
