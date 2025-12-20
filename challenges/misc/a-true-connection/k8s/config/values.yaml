@@ -1,0 +1,11 @@
+challenge:
+  enabled: true
+  name: a-true-connection
+  category: misc
+  type: tcp
+  version: 2
+  path: challenges/misc/a-true-connection
+kubectf:
+  expires: 3600
+  availableAt: 0
+  host: example.com
