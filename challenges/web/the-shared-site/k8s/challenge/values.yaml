@@ -3,7 +3,7 @@ challenge:
   name: the-shared-site
   category: web
   type: web
-  version: 3
+  version: 4
   path: challenges/web/the-shared-site
   dockerImage: web-the-shared-site
 kubectf:
