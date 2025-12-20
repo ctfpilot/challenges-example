@@ -16,7 +16,7 @@ spec:
     kind: Deployment
     metadata:
       name: "ctf-{{ deployment_id }}"
-      namespace: kubectf-challenges-instanced
+      namespace: ctfpilot-challenges-instanced
       labels:
         challenges.ctfpilot.com/type: "web"
         challenges.ctfpilot.com/name: "where-robots-cannot-search"
@@ -96,7 +96,7 @@ spec:
     kind: Service
     metadata:
       name: "ctf-{{ deployment_id }}"
-      namespace: kubectf-challenges-instanced
+      namespace: ctfpilot-challenges-instanced
       labels:
         challenges.ctfpilot.com/type: "web"
         challenges.ctfpilot.com/name: "where-robots-cannot-search"
@@ -118,7 +118,7 @@ spec:
     kind: Ingress
     metadata:
       name: ingress-ctf-{{ deployment_id }}
-      namespace: kubectf-challenges-instanced
+      namespace: ctfpilot-challenges-instanced
       labels:
         challenges.ctfpilot.com/type: "web"
         challenges.ctfpilot.com/name: "where-robots-cannot-search"
