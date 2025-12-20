@@ -14,7 +14,7 @@ type: shared
 instanced_type: web
 instanced_name: null
 instanced_subdomains: []
-connection: null
+connection: https://the-shared-site.{{ HOST }}
 flag:
 - flag: ctfpilot{thanks-for-visiting-the-shared-site}
   case_sensitive: false
