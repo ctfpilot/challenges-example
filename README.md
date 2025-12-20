@@ -1,6 +1,12 @@
 # Challenges example repository
 
-This repository contains an example challenges repository, for CTF Pilot's Challenge Repository Template
+> [!IMPORTANT]
+> This is an example repository of the [CTF Pilot's Challenge Repository Template](https://github.com/ctfpilot/challenges-template).  
+> It is intended to be used as a reference for creating your own challenges repository, and testing the infrastructure with some example challenges.
+>
+> **Please use the [Challenge Repository Template](https://github.com/ctfpilot/challenges-template) if you want to create your own challenges repository.**
+
+This repository contains an example challenges repository, for [CTF Pilot's Challenge Repository Template](https://github.com/ctfpilot/challenges-template).
 
 ## Challenge toolkit
 
