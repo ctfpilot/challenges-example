@@ -6,7 +6,7 @@ metadata:
     challenges.ctfpilot.com/type: "tcp"
     challenges.ctfpilot.com/name: "a-true-connection"
     challenges.ctfpilot.com/category: "misc"
-    challenges.ctfpilot.com/version: "2"
+    challenges.ctfpilot.com/version: "3"
     challenges.ctfpilot.com/configmap: "challenge-config"
     challenges.ctfpilot.com/enabled: "true"
     ctfpilot.com/component: "challenge-config"
@@ -14,7 +14,7 @@ data:
   name: "a-true-connection"
   path: "challenges/misc/a-true-connection"
   repository: "ctfpilot/challenges-example"
-  generated_at: "2025-12-20 19:24:39"
+  generated_at: "2025-12-20 19:25:35"
   challenge: |
     {
       "$schema": "https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json",
