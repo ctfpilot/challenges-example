@@ -1,6 +1,6 @@
 apiVersion: v2
 name: configmap-oh-look-a-flag
-version: 1.6.0
+version: 1.7.0
 description: Challenge configmap for oh-look-a-flag in category forensics
-appVersion: "1.6.0"
+appVersion: "1.7.0"
 type: application
