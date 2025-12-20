@@ -3,7 +3,7 @@ challenge:
   name: where-robots-cannot-search
   category: web
   type: web
-  version: 3
+  version: 4
   path: challenges/web/where-robots-cannot-search
 kubectf:
   expires: 3600
