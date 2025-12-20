@@ -1,3 +1,3 @@
 # Solution
-This directory is used to store the solution script for the challenge.
-This file should contain the steps to solve the challenge.
+
+Go to `/robots.txt` and see `/flag.txt` is disallowed. Go there for flag.

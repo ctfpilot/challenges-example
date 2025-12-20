@@ -1,8 +1,7 @@
 # Dockerfile for web - Where robots cannot search
-FROM ubuntu:22.04
+FROM httpd:2.4-alpine
 
-RUN apt-get update && apt-get upgrade -y && apt-get install -y python3
-RUN useradd -m challengeuser
+RUN sed -i 's|#LoadModule rewrite_module modules/mod_rewrite.so|LoadModule rewrite_module modules/mod_rewrite.so|' /usr/local/apache2/conf/httpd.conf
+RUN sed -i 's|AllowOverride None|AllowOverride All|' /usr/local/apache2/conf/httpd.conf
 
-USER challengeuser
-
+COPY ./html/ /usr/local/apache2/htdocs/

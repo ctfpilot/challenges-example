@@ -3,4 +3,5 @@
 **Difficulty:** Beginner  
 **Author:** The Mikkel  
 
-*Add challenge description here*
+Ahh, the Brunnerne company.  
+But they have a secret, hidden away from robot search.

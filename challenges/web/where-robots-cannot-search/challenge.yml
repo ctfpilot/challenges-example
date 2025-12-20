@@ -6,7 +6,9 @@ slug: where-robots-cannot-search
 author: The Mikkel
 category: web
 difficulty: beginner
-tags: []
+tags: [
+  "BrunnerCTF 2025",
+]
 type: instanced
 instanced_type: web
 instanced_name: null
