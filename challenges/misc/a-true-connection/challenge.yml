@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json
+
+enabled: true
+name: A true connection
+slug: a-true-connection
+author: The Mikkel
+category: misc
+difficulty: beginner
+tags: [
+  Instanced,
+  TCP,
+  Example
+]
+type: instanced
+instanced_type: tcp
+instanced_name: null
+instanced_subdomains: []
+connection: null
+flag:
+- flag: ctfpilot{what-a-connection-you-have-made!}
+  case_sensitive: false
+points: 1000
+decay: 75
+min_points: 100
+description_location: description.md
+handout_dir: handout
+dockerfile_locations:
+- location: src/Dockerfile
+  context: src/
+  identifier: null
+

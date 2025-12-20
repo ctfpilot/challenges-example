@@ -1,0 +1,130 @@
+apiVersion: kube-ctf.ctfpilot.com/v1
+kind: instancedChallenge
+metadata:
+  name: "a-true-connection"
+  labels:
+    challenges.ctfpilot.com/type: "tcp"
+    challenges.ctfpilot.com/name: "a-true-connection"
+    challenges.ctfpilot.com/category: "misc"
+    ctfpilot.com/component: "instanced-challenge"
+spec:
+  expires: 3600
+  available_at: 0
+  type: tcp
+  template: |
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: "ctf-{{ deployment_id }}"
+      namespace: ctfpilot-challenges-instanced
+      labels:
+        challenges.ctfpilot.com/type: "tcp"
+        challenges.ctfpilot.com/name: "a-true-connection"
+        challenges.ctfpilot.com/category: "misc"
+        instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+        instanced.challenges.ctfpilot.com/owner: "{{ owner_id }}"
+        ctfpilot.com/component: "instanced-challenge"
+      annotations:
+        janitor/expires: "{{ expires }}"
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+          instanced.challenges.ctfpilot.com/owner: "{{ owner_id }}"
+      template:
+        metadata:
+          labels:
+            role: "tcp"
+            challenges.ctfpilot.com/type: "tcp"
+            challenges.ctfpilot.com/name: "a-true-connection"
+            challenges.ctfpilot.com/category: "misc"
+            instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+            instanced.challenges.ctfpilot.com/owner: "{{ owner_id }}"
+            ctfpilot.com/component: "instanced-challenge"
+        spec:
+          enableServiceLinks: false
+          automountServiceAccountToken: false
+          imagePullSecrets:
+            - name: dockerconfigjson-github-com
+          dnsPolicy: None
+          dnsConfig:
+            nameservers:
+              - 1.1.1.1
+              - 8.8.8.8
+          tolerations:
+            - key: "cluster.ctfpilot.com/node"
+              value: "scaler"
+              effect: "PreferNoSchedule"
+          affinity:
+            nodeAffinity:
+              requiredDuringSchedulingIgnoredDuringExecution:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: "cluster.ctfpilot.com/node"
+                        operator: In
+                        values:
+                          - scaler
+          containers:
+            - name: tcp
+              image: ghcr.io/ctfpilot/challenges-example-misc-a-true-connection:3
+              imagePullPolicy: IfNotPresent
+              resources:
+                limits:
+                  cpu: 200m
+                  memory: 256Mi
+                requests:
+                  cpu: 10m
+                  memory: 32Mi
+              ports:
+                - containerPort: 8080
+                  name: tcp
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: "ctf-{{ deployment_id }}"
+      namespace: ctfpilot-challenges-instanced
+      labels:
+        challenges.ctfpilot.com/type: "tcp"
+        challenges.ctfpilot.com/name: "a-true-connection"
+        challenges.ctfpilot.com/category: "misc"
+        instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+        instanced.challenges.ctfpilot.com/owner: "{{ owner_id }}"
+        ctfpilot.com/component: "instanced-challenge"
+      annotations:
+        janitor/expires: "{{ expires }}"
+    spec:
+      selector:
+        role: "tcp"
+        instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+      ports:
+        - port: 8080
+          name: tcp
+          targetPort: tcp
+    ---
+    apiVersion: traefik.io/v1alpha1
+    kind: IngressRouteTCP
+    metadata:
+      name: "ingress-ctf-{{ deployment_id }}"
+      namespace: ctfpilot-challenges-instanced
+      labels:
+        challenges.ctfpilot.com/type: "tcp"
+        challenges.ctfpilot.com/name: "a-true-connection"
+        challenges.ctfpilot.com/category: "misc"
+        instanced.challenges.ctfpilot.com/deployment: "{{ deployment_id }}"
+        instanced.challenges.ctfpilot.com/owner: "{{ owner_id }}"
+        ctfpilot.com/component: "instanced-challenge"
+      annotations:
+        janitor/expires: "{{ expires }}"
+        traefik.ingress.kubernetes.io/router.priority: "100"
+    spec:
+      entryPoints:
+        - websecure
+      routes:
+        - match: HostSNI(`{{ deployment_id }}.{{ domain }}`)
+          services:
+            - name: "ctf-{{ deployment_id }}"
+              port: 8080
+      tls:
+        secretName: kubectf-cert-challs
