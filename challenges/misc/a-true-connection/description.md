@@ -3,4 +3,4 @@
 **Difficulty:** Beginner  
 **Author:** The Mikkel  
 
-*Add challenge description here*
+What a connection you can make, if you can connect to the endpoint below!

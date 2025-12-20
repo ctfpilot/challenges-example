@@ -6,7 +6,11 @@ slug: a-true-connection
 author: The Mikkel
 category: misc
 difficulty: beginner
-tags: []
+tags: [
+  Instanced,
+  TCP,
+  Example
+]
 type: instanced
 instanced_type: tcp
 instanced_name: null

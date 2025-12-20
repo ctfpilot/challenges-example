@@ -1,3 +1,4 @@
 # Solution
-This directory is used to store the solution script for the challenge.
-This file should contain the steps to solve the challenge.
+
+Connect to the service using the provided connection details.  
+From here, the user has to send a message to the server, which will respond with the flag.
