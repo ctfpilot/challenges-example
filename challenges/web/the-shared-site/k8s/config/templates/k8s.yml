@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "challenge-web-the-shared-site"
+  labels:
+    challenges.ctfpilot.com/type: "web"
+    challenges.ctfpilot.com/name: "the-shared-site"
+    challenges.ctfpilot.com/category: "web"
+    challenges.ctfpilot.com/version: "3"
+    challenges.ctfpilot.com/configmap: "challenge-config"
+    challenges.ctfpilot.com/enabled: "true"
+    ctfpilot.com/component: "challenge-config"
+data:
+  name: "the-shared-site"
+  path: "challenges/web/the-shared-site"
+  repository: "ctfpilot/challenges-example"
+  generated_at: "2025-12-20 15:52:29"
+  challenge: |
+    {
+      "$schema": "https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json",
+      "enabled": true,
+      "name": "The shared site",
+      "slug": "the-shared-site",
+      "author": "The Mikkel",
+      "category": "web",
+      "difficulty": "beginner",
+      "tags": [
+        "Shared",
+        "Example"
+      ],
+      "type": "shared",
+      "instanced_type": "web",
+      "instanced_name": null,
+      "instanced_subdomains": [],
+      "connection": null,
+      "flag": [
+        {
+          "flag": "ctfpilot{thanks-for-visiting-the-shared-site}",
+          "case_sensitive": false
+        }
+      ],
+      "points": 1000,
+      "decay": 75,
+      "min_points": 100,
+      "description_location": "description.md",
+      "handout_dir": "handout",
+      "dockerfile_locations": [
+        {
+          "location": "src/Dockerfile",
+          "context": "src/",
+          "identifier": null
+        }
+      ]
+    }
+
+  description: |
+    # The shared site
+    
+    **Difficulty:** Beginner  
+    **Author:** The Mikkel  
+    
+    The site may contain the precious object you are looking for.
+

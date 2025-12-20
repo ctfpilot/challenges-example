@@ -1,0 +1,2 @@
+Alright, here is the flag:
+ctfpilot{handouts-may-contain-flag}

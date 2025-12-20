@@ -1,0 +1,12 @@
+challenge:
+  enabled: true
+  name: the-shared-site
+  category: web
+  type: web
+  version: 3
+  path: challenges/web/the-shared-site
+  dockerImage: web-the-shared-site
+kubectf:
+  expires: 3600
+  availableAt: 0
+  host: example.com

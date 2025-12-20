@@ -1,0 +1,11 @@
+challenge:
+  enabled: true
+  name: where-robots-cannot-search
+  category: web
+  type: web
+  version: 7
+  path: challenges/web/where-robots-cannot-search
+kubectf:
+  expires: 3600
+  availableAt: 0
+  host: example.com

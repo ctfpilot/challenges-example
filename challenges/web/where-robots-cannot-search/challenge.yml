@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json
+
+enabled: true
+name: Where robots cannot search
+slug: where-robots-cannot-search
+author: The Mikkel
+category: web
+difficulty: beginner
+tags: [
+  "BrunnerCTF 2025",
+  Instanced,
+  Example
+]
+type: instanced
+instanced_type: web
+instanced_name: null
+instanced_subdomains: []
+connection: null
+flag:
+- flag: ctfpilot{r0bot5_sh0u1d_nOt_637_h3re_b0t_You_g07_h3re}
+  case_sensitive: false
+points: 1000
+decay: 75
+min_points: 100
+description_location: description.md
+handout_dir: handout
+dockerfile_locations:
+- location: src/Dockerfile
+  context: src/
+  identifier: null
+
