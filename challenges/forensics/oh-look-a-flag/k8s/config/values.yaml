@@ -1,0 +1,11 @@
+challenge:
+  enabled: true
+  name: oh-look-a-flag
+  category: forensics
+  type: none
+  version: 3
+  path: challenges/forensics/oh-look-a-flag
+kubectf:
+  expires: 3600
+  availableAt: 0
+  host: example.com

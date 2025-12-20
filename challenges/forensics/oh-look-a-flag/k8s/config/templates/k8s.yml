@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: "challenge-forensics-oh-look-a-flag"
+  labels:
+    challenges.ctfpilot.com/type: "none"
+    challenges.ctfpilot.com/name: "oh-look-a-flag"
+    challenges.ctfpilot.com/category: "forensics"
+    challenges.ctfpilot.com/version: "3"
+    challenges.ctfpilot.com/configmap: "challenge-config"
+    challenges.ctfpilot.com/enabled: "true"
+    ctfpilot.com/component: "challenge-config"
+data:
+  name: "oh-look-a-flag"
+  path: "challenges/forensics/oh-look-a-flag"
+  repository: "ctfpilot/challenges-example"
+  generated_at: "2025-12-20 13:02:20"
+  challenge: |
+    {
+      "$schema": "https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json",
+      "enabled": true,
+      "name": "Oh look, A flag!",
+      "slug": "oh-look-a-flag",
+      "author": "The Mikkel",
+      "category": "forensics",
+      "difficulty": "beginner",
+      "tags": [],
+      "type": "static",
+      "instanced_type": "none",
+      "instanced_name": null,
+      "instanced_subdomains": [],
+      "connection": null,
+      "flag": [
+        {
+          "flag": "ctfpilot{handouts-may-contain-flag}",
+          "case_sensitive": false
+        }
+      ],
+      "points": 1000,
+      "decay": 75,
+      "min_points": 100,
+      "description_location": "description.md",
+      "handout_dir": "handout"
+    }
+
+  description: |
+    # Oh look, A flag!
+    
+    **Difficulty:** Beginner  
+    **Author:** The Mikkel  
+    
+    Handouts may contain flags, but does this one?
+
