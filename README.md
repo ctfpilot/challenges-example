@@ -205,3 +205,8 @@ To create a new challenge, follow these steps:
 7. Once the workflow is complete, a new branch, pull request, and issue will be created for the challenge.
 
 If errors occur during the workflow execution, please reach out to the infrastructure team for assistance. Logs from the workflow can be found in the `Actions` tab of the repository.
+
+## Project board
+
+A project board is available to track the progress of challenges.  
+This can be found at: [Challenges Project board](https://github.com/orgs/ctfpilot/projects/2)
