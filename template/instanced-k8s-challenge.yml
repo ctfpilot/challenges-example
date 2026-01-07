@@ -1,5 +1,5 @@
 apiVersion: kube-ctf.ctfpilot.com/v1
-kind: instancedChallenge
+kind: InstancedChallenge
 metadata:
   name: "{{ CHALLENGE_NAME }}"
   labels:
@@ -8,8 +8,8 @@ metadata:
     challenges.ctfpilot.com/category: "{{ CHALLENGE_CATEGORY }}"
     ctfpilot.com/component: "instanced-challenge"
 spec:
-  expires: {{ CHALLENGE_EXPIRES }}
-  available_at: {{ CHALLENGE_AVAILABLE_AT }}
-  type: {{ CHALLENGE_TYPE }}
+  expires: { { CHALLENGE_EXPIRES } }
+  available_at: { { CHALLENGE_AVAILABLE_AT } }
+  type: { { CHALLENGE_TYPE } }
   template: |
     %%TEMPLATE%%
