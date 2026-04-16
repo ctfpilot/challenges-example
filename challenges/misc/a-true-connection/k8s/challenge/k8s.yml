@@ -67,7 +67,7 @@ spec:
                           - scaler
           containers:
             - name: tcp
-              image: ghcr.io/ctfpilot/challenges-example-misc-a-true-connection:6
+              image: ghcr.io/ctfpilot/challenges-example-misc-a-true-connection:7
               imagePullPolicy: IfNotPresent
               resources:
                 limits:
