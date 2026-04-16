@@ -14,7 +14,7 @@ data:
   name: "oh-look-a-flag"
   path: "challenges/forensics/oh-look-a-flag"
   repository: "ctfpilot/challenges-example"
-  generated_at: "2026-04-16 20:56:39"
+  generated_at: "2026-04-16 21:01:34"
   challenge: |
     {
       "$schema": "https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json",

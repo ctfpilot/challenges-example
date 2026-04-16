@@ -14,7 +14,7 @@ data:
   name: "the-shared-site"
   path: "challenges/web/the-shared-site"
   repository: "ctfpilot/challenges-example"
-  generated_at: "2026-04-16 20:56:44"
+  generated_at: "2026-04-16 21:01:35"
   challenge: |
     {
       "$schema": "https://raw.githubusercontent.com/ctfpilot/challenge-schema/refs/heads/main/schema.json",
