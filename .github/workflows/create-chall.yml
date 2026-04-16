@@ -81,7 +81,7 @@ on:
 jobs:
   create_challenge:
     name: Create challenge
-    uses: ctfpilot/challenge-ci/.github/workflows/create-chall.yml@v1.0.2
+    uses: ctfpilot/challenge-ci/.github/workflows/create-chall.yml@eb1cb68bd7d88a0306481c924aa1018838e2bb4d
     permissions:
       contents: write
       pull-requests: write
@@ -99,4 +99,3 @@ jobs:
       points: ${{ inputs.points }}
       milestone: "CTF Challenges"
       runs-on: "ubuntu-latest"
-      toolkit-path: "./challenge-toolkit/"
