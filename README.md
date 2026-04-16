@@ -10,12 +10,14 @@ This repository contains an example challenges repository, for [CTF Pilot's Chal
 
 ## Challenge toolkit
 
-This repository contains [CTF Pilot's Challenge Toolkit](https://github.com/ctfpilot/challenge-toolkit) as a Git submodule.  
-In order to retrieve the submodule, run the following command after cloning the repository:
+This repository makes use of the [CTF Pilot's Challenge Toolkit](https://github.com/ctfpilot/challenge-toolkit).  
+In order to work with the challenges in your CLI, you will need to installt the Challenge toolkit:
 
 ```bash
-git submodule update --init --recursive
+uv tool install challenge-toolkit
 ```
+
+*See the [Challenge Toolkit documentation](https://github.com/ctfpilot/challenge-toolkit) for more information about the toolkit, and how to install and use it.*
 
 ## Repository structure
 
@@ -26,7 +28,6 @@ The repository is structured as follows:
 
 ```txt
 .
-├── challenge-toolkit/
 ├── challenges/
 │   ├── web
 │   ├── forensics

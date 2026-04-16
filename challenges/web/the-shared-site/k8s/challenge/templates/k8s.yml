@@ -47,7 +47,7 @@ spec:
                       - scaler
       containers:
         - name: web
-          image: ghcr.io/ctfpilot/challenges-example-web-the-shared-site:5
+          image: ghcr.io/ctfpilot/challenges-example-web-the-shared-site:6
           imagePullPolicy: IfNotPresent
           resources:
             limits:

@@ -9,9 +9,8 @@ on:
 jobs:
   create_pages:
     name: Create pages
-    uses: ctfpilot/challenge-ci/.github/workflows/configure-pages.yml@v1.0.2
+    uses: ctfpilot/challenge-ci/.github/workflows/configure-challs.yml@eb1cb68bd7d88a0306481c924aa1018838e2bb4d
     permissions:
       contents: write
     with:
       runs-on: "ubuntu-latest"
-      toolkit-path: "./challenge-toolkit/"
