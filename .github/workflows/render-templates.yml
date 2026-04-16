@@ -6,11 +6,10 @@ on:
 jobs:
   render_templates:
     name: Render all templates
-    uses: ctfpilot/challenge-ci/.github/workflows/render-templates.yml@v1.0.2
+    uses: ctfpilot/challenge-ci/.github/workflows/configure-challs.yml@eb1cb68bd7d88a0306481c924aa1018838e2bb4d
     permissions:
       contents: write
       packages: write
       id-token: write
     with:
       runs-on: ubuntu-latest
-      toolkit-path: ./challenge-toolkit/
